@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Book a Table</h2>
+<form method="POST">
+    <label>Name: <input type="text" name="name" required></label><br>
+    <label>Number of Guests: <input type="number" name="guests" required></label><br>
+    <label>Date: <input type="date" name="date" required></label><br>
+    <input type="submit" value="Book Now">
+</form>
+{% endblock %}
