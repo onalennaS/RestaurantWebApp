@@ -1,5 +1,104 @@
 {% extends "base.html" %}
+
+{% block title %}Ona's Kitchen - Authentic Flavors & Fine Dining{% endblock %}
+
 {% block content %}
-<h1>Welcome to Our Restaurant</h1>
-<p>Delicious meals await you. Explore our menu and book your table today.</p>
+<!-- Hero Section -->
+<section class="hero">
+    <div class="hero-content">
+        <div class="hero-text">
+            <h1 class="hero-title">Welcome to Ona's Kitchen</h1>
+            <p class="hero-subtitle">Where culinary artistry meets authentic flavors</p>
+            <p class="hero-description">Experience a journey through taste with our carefully crafted dishes, made from the finest ingredients and served with passion.</p>
+            <div class="hero-buttons">
+                <a href="/menu" class="btn btn-primary">Explore Menu</a>
+                <a href="/booking" class="btn btn-secondary">Book Table</a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Elegant restaurant interior" class="fade-in">
+        </div>
+    </div>
+</section>
+
+<!-- Features Section -->
+<section class="features">
+    <div class="container">
+        <h2 class="section-title">Why Choose Ona's Kitchen?</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-utensils"></i>
+                </div>
+                <h3>Authentic Cuisine</h3>
+                <p>Traditional recipes passed down through generations, prepared with modern culinary techniques.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-leaf"></i>
+                </div>
+                <h3>Fresh Ingredients</h3>
+                <p>We source the finest local ingredients daily to ensure every dish bursts with natural flavors.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-heart"></i>
+                </div>
+                <h3>Made with Love</h3>
+                <p>Every dish is prepared with passion and attention to detail by our experienced chefs.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-wine-glass"></i>
+                </div>
+                <h3>Curated Experience</h3>
+                <p>From ambiance to service, every aspect is designed to create memorable dining moments.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Gallery Section -->
+<section class="gallery">
+    <div class="container">
+        <h2 class="section-title">Culinary Gallery</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Gourmet dish" class="gallery-img">
+                <div class="gallery-overlay">
+                    <h4>Signature Dishes</h4>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Fresh ingredients" class="gallery-img">
+                <div class="gallery-overlay">
+                    <h4>Fresh Ingredients</h4>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1586511925558-a4c6376fe65f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Desserts" class="gallery-img">
+                <div class="gallery-overlay">
+                    <h4>Artisan Desserts</h4>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1551024506-0bccd828d307?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Wine selection" class="gallery-img">
+                <div class="gallery-overlay">
+                    <h4>Wine Selection</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Call to Action -->
+<section class="cta">
+    <div class="container">
+        <div class="cta-content">
+            <h2>Ready for an Unforgettable Experience?</h2>
+            <p>Join us at Ona's Kitchen and discover why we're Johannesburg's favorite dining destination.</p>
+            <a href="/booking" class="btn btn-primary btn-large">Reserve Your Table</a>
+        </div>
+    </div>
+</section>
 {% endblock %}

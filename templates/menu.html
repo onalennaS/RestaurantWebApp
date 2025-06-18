@@ -1,9 +1,190 @@
 {% extends "base.html" %}
+
+{% block title %}Our Menu - Ona's Kitchen{% endblock %}
+
 {% block content %}
-<h2>Menu</h2>
-<ul>
-    {% for item in menu %}
-        <li>{{ item.name }} - {{ item.price }}</li>
-    {% endfor %}
-</ul>
+<!-- Menu Header -->
+<section class="page-header">
+    <div class="container">
+        <h1>Our Menu</h1>
+        <p>A culinary journey through authentic flavors and modern cuisine</p>
+    </div>
+</section>
+
+<!-- Menu Categories -->
+<section class="menu-section">
+    <div class="container">
+        <!-- Category Filter -->
+        <div class="menu-filter">
+            <button class="filter-btn active" data-category="all">All Items</button>
+            <button class="filter-btn" data-category="starters">Starters</button>
+            <button class="filter-btn" data-category="mains">Main Courses</button>
+            <button class="filter-btn" data-category="desserts">Desserts</button>
+            <button class="filter-btn" data-category="drinks">Beverages</button>
+        </div>
+
+        <!-- Menu Items -->
+        <div class="menu-grid">
+            <!-- Starters -->
+            <div class="menu-item" data-category="starters">
+                <div class="menu-item-image">
+                    <img src="https://images.unsplash.com/photo-1541014741259-de529411b96a?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Crispy Calamari">
+                </div>
+                <div class="menu-item-content">
+                    <h3>Crispy Calamari</h3>
+                    <p>Fresh squid rings, lightly battered and served with spicy aioli</p>
+                    <div class="menu-item-footer">
+                        <span class="price">R145</span>
+                        <span class="dietary-info">
+                            <i class="fas fa-fish" title="Seafood"></i>
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-item" data-category="starters">
+                <div class="menu-item-image">
+                    <img src="https://images.unsplash.com/photo-1546833999-b9f581a1996d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Bruschetta Trio">
+                </div>
+                <div class="menu-item-content">
+                    <h3>Bruschetta Trio</h3>
+                    <p>Three varieties: classic tomato, mushroom & truffle, and avocado</p>
+                    <div class="menu-item-footer">
+                        <span class="price">R95</span>
+                        <span class="dietary-info">
+                            <i class="fas fa-leaf" title="Vegetarian"></i>
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Courses -->
+            <div class="menu-item" data-category="mains">
+                <div class="menu-item-image">
+                    <img src="https://images.unsplash.com/photo-1546833999-b9f581a1996d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Grilled Ribeye">
+                </div>
+                <div class="menu-item-content">
+                    <h3>Grilled Ribeye Steak</h3>
+                    <p>Premium 300g ribeye, grilled to perfection with roasted vegetables</p>
+                    <div class="menu-item-footer">
+                        <span class="price">R285</span>
+                        <span class="dietary-info">
+                            <i class="fas fa-drumstick-bite" title="Meat"></i>
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-item" data-category="mains">
+                <div class="menu-item-image">
+                    <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Pan-seared Salmon">
+                </div>
+                <div class="menu-item-content">
+                    <h3>Pan-Seared Salmon</h3>
+                    <p>Atlantic salmon with herb crust, served on quinoa pilaf</p>
+                    <div class="menu-item-footer">
+                        <span class="price">R235</span>
+                        <span class="dietary-info">
+                            <i class="fas fa-fish" title="Seafood"></i>
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-item" data-category="mains">
+                <div class="menu-item-image">
+                    <img src="https://images.unsplash.com/photo-1555949258-eb67b1ef0ceb?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Mushroom Risotto">
+                </div>
+                <div class="menu-item-content">
+                    <h3>Wild Mushroom Risotto</h3>
+                    <p>Creamy arborio rice with mixed wild mushrooms and truffle oil</p>
+                    <div class="menu-item-footer">
+                        <span class="price">R185</span>
+                        <span class="dietary-info">
+                            <i class="fas fa-leaf" title="Vegetarian"></i>
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Desserts -->
+            <div class="menu-item" data-category="desserts">
+                <div class="menu-item-image">
+                    <img src="https://images.unsplash.com/photo-1586511925558-a4c6376fe65f?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Chocolate Lava Cake">
+                </div>
+                <div class="menu-item-content">
+                    <h3>Chocolate Lava Cake</h3>
+                    <p>Warm chocolate cake with molten center, vanilla ice cream</p>
+                    <div class="menu-item-footer">
+                        <span class="price">R85</span>
+                        <span class="dietary-info">
+                            <i class="fas fa-leaf" title="Vegetarian"></i>
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-item" data-category="desserts">
+                <div class="menu-item-image">
+                    <img src="https://images.unsplash.com/photo-1567306301408-9b74779a11af?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Tiramisu">
+                </div>
+                <div class="menu-item-content">
+                    <h3>Classic Tiramisu</h3>
+                    <p>Traditional Italian dessert with coffee-soaked ladyfingers</p>
+                    <div class="menu-item-footer">
+                        <span class="price">R75</span>
+                        <span class="dietary-info">
+                            <i class="fas fa-leaf" title="Vegetarian"></i>
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Beverages -->
+            <div class="menu-item" data-category="drinks">
+                <div class="menu-item-image">
+                    <img src="https://images.unsplash.com/photo-1551024506-0bccd828d307?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="House Wine">
+                </div>
+                <div class="menu-item-content">
+                    <h3>House Red Wine</h3>
+                    <p>Carefully selected South African Cabernet Sauvignon</p>
+                    <div class="menu-item-footer">
+                        <span class="price">R45/glass</span>
+                        <span class="dietary-info">
+                            <i class="fas fa-wine-glass" title="Alcoholic"></i>
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-item" data-category="drinks">
+                <div class="menu-item-image">
+                    <img src="https://images.unsplash.com/photo-1544145945-f90425340c7e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Specialty Coffee">
+                </div>
+                <div class="menu-item-content">
+                    <h3>Ona's Signature Coffee</h3>
+                    <p>Single-origin Ethiopian beans, expertly roasted</p>
+                    <div class="menu-item-footer">
+                        <span class="price">R35</span>
+                        <span class="dietary-info">
+                            <i class="fas fa-coffee" title="Hot Beverage"></i>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Chef's Special -->
+        <div class="chefs-special">
+            <div class="special-content">
+                <h2>Chef's Special</h2>
+                <p>Ask your server about today's specially crafted dish featuring seasonal ingredients and innovative techniques.</p>
+                <div class="special-note">
+                    <i class="fas fa-star"></i>
+                    <span>Changes daily based on market availability</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 {% endblock %}

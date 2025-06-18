@@ -1,10 +1,220 @@
 {% extends "base.html" %}
+
+{% block title %}Book a Table - Ona's Kitchen{% endblock %}
+
 {% block content %}
-<h2>Book a Table</h2>
-<form method="POST">
-    <label>Name: <input type="text" name="name" required></label><br>
-    <label>Number of Guests: <input type="number" name="guests" required></label><br>
-    <label>Date: <input type="date" name="date" required></label><br>
-    <input type="submit" value="Book Now">
-</form>
+<!-- Booking Header -->
+<section class="page-header">
+    <div class="container">
+        <h1>Reserve Your Table</h1>
+        <p>Secure your spot for an unforgettable dining experience</p>
+    </div>
+</section>
+
+<!-- Booking Form Section -->
+<section class="booking-section">
+    <div class="container">
+        <div class="booking-container">
+            <div class="booking-form-wrapper">
+                <div class="booking-form-header">
+                    <h2>Make a Reservation</h2>
+                    <p>Please fill in the details below and we'll confirm your booking shortly.</p>
+                </div>
+                
+                <form class="booking-form" method="POST" id="bookingForm">
+                    <div class="form-group">
+                        <label for="name">Full Name *</label>
+                        <input type="text" id="name" name="name" required>
+                        <span class="form-error" id="nameError"></span>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required>
+                            <span class="form-error" id="emailError"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number *</label>
+                            <input type="tel" id="phone" name="phone" required>
+                            <span class="form-error" id="phoneError"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="date">Preferred Date *</label>
+                            <input type="date" id="date" name="date" required>
+                            <span class="form-error" id="dateError"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="time">Preferred Time *</label>
+                            <select id="time" name="time" required>
+                                <option value="">Select time</option>
+                                <option value="17:00">5:00 PM</option>
+                                <option value="17:30">5:30 PM</option>
+                                <option value="18:00">6:00 PM</option>
+                                <option value="18:30">6:30 PM</option>
+                                <option value="19:00">7:00 PM</option>
+                                <option value="19:30">7:30 PM</option>
+                                <option value="20:00">8:00 PM</option>
+                                <option value="20:30">8:30 PM</option>
+                                <option value="21:00">9:00 PM</option>
+                            </select>
+                            <span class="form-error" id="timeError"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="guests">Number of Guests *</label>
+                            <select id="guests" name="guests" required>
+                                <option value="">Select guests</option>
+                                <option value="1">1 Guest</option>
+                                <option value="2">2 Guests</option>
+                                <option value="3">3 Guests</option>
+                                <option value="4">4 Guests</option>
+                                <option value="5">5 Guests</option>
+                                <option value="6">6 Guests</option>
+                                <option value="7">7 Guests</option>
+                                <option value="8">8 Guests</option>
+                                <option value="9+">9+ Guests (Call us)</option>
+                            </select>
+                            <span class="form-error" id="guestsError"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="occasion">Occasion (Optional)</label>
+                            <select id="occasion" name="occasion">
+                                <option value="">Select occasion</option>
+                                <option value="birthday">Birthday</option>
+                                <option value="anniversary">Anniversary</option>
+                                <option value="business">Business Dinner</option>
+                                <option value="romantic">Romantic Dinner</option>
+                                <option value="celebration">Celebration</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="requests">Special Requests</label>
+                        <textarea id="requests" name="requests" rows="4" placeholder="Any dietary restrictions, seating preferences, or special requests..."></textarea>
+                    </div>
+
+                    <div class="form-group checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="newsletter" name="newsletter">
+                            <span class="checkmark"></span>
+                            Subscribe to our newsletter for special offers and events
+                        </label>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-large">
+                        <i class="fas fa-calendar-check"></i>
+                        Confirm Reservation
+                    </button>
+                </form>
+            </div>
+
+            <div class="booking-info">
+                <div class="info-card">
+                    <div class="info-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>Opening Hours</h3>
+                    <div class="hours-list">
+                        <div class="hours-item">
+                            <span>Monday - Thursday</span>
+                            <span>5:00 PM - 10:00 PM</span>
+                        </div>
+                        <div class="hours-item">
+                            <span>Friday - Saturday</span>
+                            <span>5:00 PM - 11:00 PM</span>
+                        </div>
+                        <div class="hours-item">
+                            <span>Sunday</span>
+                            <span>4:00 PM - 9:00 PM</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <div class="info-icon">
+                        <i class="fas fa-info-circle"></i>
+                    </div>
+                    <h3>Booking Policy</h3>
+                    <ul class="policy-list">
+                        <li>Reservations are held for 15 minutes past the booking time</li>
+                        <li>Cancellations must be made 24 hours in advance</li>
+                        <li>Large parties (8+) require a deposit</li>
+                        <li>Children under 12 must be accompanied by adults</li>
+                    </ul>
+                </div>
+
+                <div class="info-card">
+                    <div class="info-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <h3>Need Help?</h3>
+                    <p>For immediate assistance or special arrangements, please call us:</p>
+                    <div class="contact-info">
+                        <p><strong>+27 123 456 789</strong></p>
+                        <p>Available daily 4:00 PM - 10:00 PM</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Testimonials -->
+<section class="testimonials">
+    <div class="container">
+        <h2 class="section-title">What Our Guests Say</h2>
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <p>"Absolutely incredible dining experience! The atmosphere is perfect for special occasions."</p>
+                <div class="testimonial-author">
+                    <strong>Sarah M.</strong>
+                    <span>Anniversary Dinner</span>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <p>"The food quality and service exceeded all expectations. Will definitely be returning!"</p>
+                <div class="testimonial-author">
+                    <strong>David L.</strong>
+                    <span>Business Dinner</span>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <p>"Ona's Kitchen never disappoints. The chef's special was phenomenal!"</p>
+                <div class="testimonial-author">
+                    <strong>Maria K.</strong>
+                    <span>Regular Guest</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 {% endblock %}
