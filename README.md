@@ -24,5 +24,5 @@ A modern restaurant web application built with **Flask**. This app showcases an 
 
 ---
 
-## 🗂️ Project Structure
+
 
